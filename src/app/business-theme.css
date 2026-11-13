@@ -1,0 +1,1045 @@
+:root {
+  --ink: #172b3f;
+  --muted: #687b8d;
+  --line: #dce5eb;
+  --purple: #16736d;
+  --green: #237761;
+  --orange: #a97235;
+  --red: #a94d4a;
+  --canvas: #f2f5f7;
+  --navy: #10283d;
+  --navy-soft: #17364e;
+  --brand: #16736d;
+  --brand-dark: #105a55;
+  --brand-soft: #e7f2f0;
+  --surface: #ffffff;
+  --surface-muted: #f7f9fa;
+  --focus: #2c8b83;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--canvas);
+}
+
+body {
+  margin: 0;
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  font-size: 13px;
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid #2c8b8352;
+  outline-offset: 2px;
+}
+
+/* Workspace navigation */
+.shell {
+  min-height: 100vh;
+  background: var(--canvas);
+}
+
+.sidebar {
+  width: 252px;
+  padding: 22px 14px 13px;
+  color: #eaf1f5;
+  background: var(--navy);
+  border-right: 1px solid #0b2031;
+}
+
+.brand {
+  gap: 11px;
+  padding: 0 10px 23px;
+  color: #fff;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -.4px;
+}
+
+.brand-mark {
+  width: 32px;
+  height: 32px;
+  color: #fff;
+  background: var(--brand);
+  border-radius: 8px;
+}
+
+.brand-dot {
+  color: #63c0b3;
+}
+
+.workspace-switch {
+  margin-bottom: 27px;
+  padding: 11px 10px;
+  border: 1px solid #ffffff1c;
+  border-radius: 7px;
+  background: #ffffff08;
+}
+
+.workspace-avatar {
+  width: 32px;
+  height: 32px;
+  color: #eaf5f2;
+  background: #1b514f;
+  border-radius: 6px;
+}
+
+.workspace-switch strong,
+.profile strong {
+  color: #f2f6f8;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.workspace-switch small,
+.profile small {
+  color: #9fb0bf;
+  font-size: 9.5px;
+}
+
+.side-label {
+  padding: 0 10px 8px;
+  color: #8397a8;
+  font-size: 9px;
+  letter-spacing: 1.2px;
+}
+
+.nav-item {
+  height: 38px;
+  margin: 2px 0;
+  padding: 0 11px;
+  color: #b7c5d0;
+  border-radius: 6px;
+  font-size: 11px;
+  transition: background-color .14s ease, color .14s ease;
+}
+
+.nav-item:hover {
+  color: #fff;
+  background: #ffffff12;
+}
+
+.nav-item.active {
+  color: #fff;
+  background: #1a514f;
+  font-weight: 600;
+}
+
+.nav-count {
+  color: #cce8e4;
+  background: #ffffff18;
+}
+
+.saved-number,
+.side-label-space {
+  color: #91a2b2;
+}
+
+.help-card {
+  margin: 0 1px 13px;
+  padding: 13px 12px;
+  color: #eaf1f5;
+  border: 1px solid #ffffff18;
+  border-radius: 7px;
+  background: var(--navy-soft);
+}
+
+.help-icon {
+  color: #b9e1dc;
+  background: #ffffff15;
+}
+
+.help-card strong {
+  color: #f4f7f8;
+}
+
+.help-card p {
+  color: #adbdc9;
+  font-size: 10px;
+}
+
+.help-card button {
+  color: #8fd0c6;
+}
+
+.profile {
+  padding: 13px 4px 4px;
+  color: #eaf1f5;
+  border-color: #ffffff1c;
+  background: transparent;
+}
+
+.profile-avatar,
+.top-avatar {
+  color: #eaf3f2;
+  background: #315663;
+  border-radius: 6px;
+}
+
+.main-area {
+  width: calc(100% - 252px);
+  margin-left: 252px;
+  background: var(--canvas);
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 4;
+  height: 62px;
+  padding: 0 34px;
+  border-bottom: 1px solid var(--line);
+  background: #ffffff;
+}
+
+.crumb {
+  color: #738596;
+  font-size: 10px;
+}
+
+.crumb b {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.crumb span {
+  color: #b8c4cd;
+}
+
+.top-actions {
+  gap: 15px;
+}
+
+.search-box {
+  width: 280px;
+  height: 34px;
+  color: #8192a0;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #f8fafb;
+}
+
+.search-box input {
+  color: var(--ink);
+  font-size: 10px;
+}
+
+.search-box input::placeholder {
+  color: #8999a6;
+}
+
+.search-box kbd {
+  color: #728392;
+  border-color: #dce4e9;
+  background: #fff;
+}
+
+.icon-btn,
+.dots-btn {
+  color: #718392;
+}
+
+.icon-btn:hover,
+.dots-btn:hover {
+  color: var(--brand-dark);
+}
+
+.content {
+  width: 100%;
+  max-width: 1480px;
+  padding: 29px 34px 34px;
+}
+
+.page-heading {
+  margin-bottom: 20px;
+}
+
+.eyebrow {
+  color: #6d8292;
+  font-size: 9px;
+  letter-spacing: 1.1px;
+}
+
+.pulse {
+  background: #328473;
+  box-shadow: 0 0 0 3px #e1efeb;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--ink);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+h1 {
+  margin: 8px 0 5px;
+  font-size: clamp(22px, 2.2vw, 27px);
+  font-weight: 650;
+  letter-spacing: -.65px;
+}
+
+.wave {
+  color: var(--brand);
+}
+
+.page-heading p {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.heading-actions {
+  gap: 8px;
+}
+
+/* Buttons, cards and metrics */
+.btn {
+  height: 35px;
+  padding: 0 13px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 600;
+  transition: background-color .14s ease, border-color .14s ease, color .14s ease;
+}
+
+.btn-light {
+  color: #42586b;
+  border: 1px solid #d7e1e7;
+  background: #fff;
+}
+
+.btn-light:hover {
+  color: var(--brand-dark);
+  border-color: #a9c7c3;
+  background: #f8fbfa;
+}
+
+.btn-primary {
+  color: #fff;
+  border: 1px solid var(--brand);
+  background: var(--brand);
+  box-shadow: none;
+}
+
+.btn-primary:hover {
+  border-color: var(--brand-dark);
+  background: var(--brand-dark);
+}
+
+.metric-grid {
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.metric-card,
+.panel {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: var(--surface);
+  box-shadow: 0 1px 2px #142b3b08;
+}
+
+.metric-card {
+  min-height: 122px;
+  padding: 15px 16px;
+}
+
+.metric-top {
+  margin-bottom: 11px;
+}
+
+.metric-icon {
+  width: 30px;
+  height: 30px;
+  color: var(--brand);
+  border-radius: 6px;
+  background: var(--brand-soft);
+}
+
+.metric-card:nth-child(2) .metric-icon {
+  color: #287a62;
+  background: #e8f2ed;
+}
+
+.metric-card:nth-child(3) .metric-icon {
+  color: #9a6a31;
+  background: #f5eee4;
+}
+
+.metric-card:nth-child(4) .metric-icon {
+  color: #9a5550;
+  background: #f7eae8;
+}
+
+.metric-label,
+.metric-note {
+  color: #728494;
+  font-size: 10px;
+}
+
+.metric-value {
+  margin: 4px 0 7px;
+  color: var(--ink);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  font-size: 22px;
+  font-weight: 650;
+  letter-spacing: -.45px;
+  font-variant-numeric: tabular-nums;
+}
+
+.metric-change {
+  gap: 5px;
+  font-size: 9px;
+}
+
+.change-positive {
+  color: #26745f;
+}
+
+.change-negative {
+  color: #a97235;
+}
+
+.metric-note {
+  color: #8696a2;
+}
+
+.overview-grid {
+  gap: 13px;
+  margin-bottom: 14px;
+}
+
+.panel {
+  padding: 17px 18px;
+}
+
+.panel-head h2 {
+  color: var(--ink);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 650;
+  letter-spacing: -.15px;
+}
+
+.panel-head p {
+  color: #718392;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.text-button {
+  color: var(--brand-dark);
+}
+
+.text-button:hover {
+  color: var(--navy);
+}
+
+.pipeline-summary strong {
+  color: var(--ink);
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+.pipeline-summary small {
+  color: #778a98;
+}
+
+.summary-divider,
+.stages-chart {
+  border-color: #e6ecef;
+}
+
+.stage-row {
+  gap: 12px;
+}
+
+.stage-name,
+.stage-qty {
+  color: #5f7384;
+}
+
+.bar-track {
+  background: #e9eef1;
+}
+
+.bar-fill {
+  background: var(--brand);
+}
+
+.target-ring {
+  stroke: var(--brand);
+}
+
+.target-ring-wrap,
+.target-panel {
+  color: var(--ink);
+}
+
+.live-pill {
+  color: #276f5e;
+  border-color: #d4e8df;
+  background: #edf6f1;
+}
+
+/* Tables and opportunity status */
+.deals-panel,
+.account-directory,
+.account-funnel-page,
+.account-funnel-all {
+  padding: 17px 18px;
+}
+
+.table-scroll {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead th {
+  padding: 10px 9px;
+  color: #718392;
+  border-bottom: 1px solid #dce5eb;
+  background: #f6f8f9;
+  font-size: 8.5px;
+  font-weight: 650;
+  letter-spacing: .55px;
+}
+
+tbody td {
+  padding: 12px 9px;
+  color: #42586b;
+  border-bottom: 1px solid #e8edf0;
+  font-size: 10px;
+}
+
+tbody tr:hover {
+  background: #f9fbfb;
+}
+
+.deal-name small,
+.date-cell {
+  color: #748694;
+}
+
+.deal-open {
+  color: #1d3b52;
+  font-weight: 600;
+}
+
+.deal-open:hover {
+  color: var(--brand-dark);
+}
+
+.deal-logo {
+  color: #1a625e;
+  border-radius: 6px;
+  background: #e8f2ef;
+}
+
+.owner {
+  color: #52697a;
+}
+
+.owner-avatar {
+  color: #46636b;
+  background: #e7edef;
+}
+
+.stage-select,
+.account-funnel-select select,
+.negotiation-deal-select,
+.active-project-picker select {
+  color: #435a6c;
+  border: 1px solid #dce5eb;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.margin-status.healthy {
+  color: #26745f;
+}
+
+.margin-status.watch {
+  color: #9a6b32;
+}
+
+.margin-status.risk {
+  color: #a94d4a;
+}
+
+.empty-state,
+.history-empty,
+.negotiation-empty {
+  color: #64798a;
+  border-color: #d9e3e8;
+  border-radius: 6px;
+  background: #f8fafb;
+}
+
+/* Accounts, pipeline, project pages */
+.account-card,
+.account-funnel-account-list button {
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: #fff;
+}
+
+.account-card:hover,
+.account-funnel-account-list button:hover {
+  border-color: #a9c7c3;
+  background: #f9fbfa;
+}
+
+.account-card.selected,
+.account-funnel-account-list button.selected {
+  border-color: #75aaa4;
+  background: #edf5f3;
+}
+
+.account-avatar {
+  color: #24665e;
+  background: #e6f1ee;
+}
+
+.account-title,
+.account-funnel-stage,
+.account-funnel-projects h3 {
+  color: var(--ink);
+}
+
+.account-funnel-track,
+.util-track {
+  background: #e9eef1;
+}
+
+.account-funnel-track span {
+  background: var(--brand);
+}
+
+.account-funnel-projects button {
+  border-bottom-color: #e6ecef;
+}
+
+.account-project-table th,
+.account-project-table td {
+  border-bottom-color: #e6ecef;
+}
+
+.project-account-topbar {
+  border-bottom-color: var(--line);
+}
+
+.project-account-content {
+  color: var(--ink);
+}
+
+.project-account-heading .eyebrow {
+  color: var(--brand-dark);
+}
+
+.project-detail-grid > div {
+  border-color: var(--line);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.project-detail-grid small,
+.project-account-heading p {
+  color: #718392;
+}
+
+/* Planner, negotiation and saved history */
+.active-project-picker,
+.deal-selector-card,
+.market-estimate-panel,
+.utilization-panel,
+.utilization-side,
+.simulator,
+.defense-panel,
+.customer-history {
+  border-radius: 7px;
+}
+
+.active-project-picker label,
+.field-label,
+.margin-controls label {
+  color: #536a7b;
+}
+
+.market-estimate-content > div,
+.cost-summary,
+.project-detail-grid > div {
+  background: var(--surface-muted);
+}
+
+.market-estimate-content > div {
+  border-color: var(--line);
+  border-radius: 6px;
+}
+
+.cost-summary {
+  border-color: var(--line);
+  border-radius: 6px;
+}
+
+.cost-summary b {
+  color: var(--ink);
+}
+
+.milestone-axis,
+.milestone-row,
+.resource-head,
+.resource-row {
+  color: #536a7b;
+}
+
+.milestone-track {
+  background: #e9eef1;
+}
+
+.milestone-bar {
+  border-radius: 3px;
+}
+
+.dependency-note,
+.swap-callout {
+  border-color: #d9e6e3;
+  border-radius: 6px;
+  background: #f2f7f6;
+  color: #42665f;
+}
+
+.resource-actions {
+  gap: 7px;
+}
+
+.resource-name-control input,
+.role-margin-control input,
+.margin-controls input,
+.milestone-controls input,
+.milestone-controls select,
+.cost-effort-grid > input,
+.cost-effort-grid > select,
+.negotiation-search,
+.counter-input,
+.new-deal-modal input,
+.new-deal-modal select,
+.new-deal-modal textarea,
+.account-funnel-select select {
+  color: #30485b;
+  border-color: #d4dfe6;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.resource-name-control input:focus,
+.negotiation-search:focus,
+.counter-input:focus-within {
+  border-color: var(--focus);
+  box-shadow: 0 0 0 3px #2c8b8317;
+}
+
+.experience-select,
+.cost-effort-grid .experience-select {
+  color: #536a7b;
+  border-color: #dce5eb;
+  background: #fff;
+}
+
+.negotiation-round-card,
+.history-past-project,
+.deal-selector-card {
+  border-color: var(--line);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.negotiation-round-head span,
+.history-badge {
+  color: #246d65;
+  border-color: #d4e7e3;
+  background: #edf5f3;
+}
+
+.negotiation-round-reason,
+.negotiation-round-ai {
+  border-color: #e6ecef;
+}
+
+.offer-card {
+  border-color: #d6e8e1;
+  border-radius: 7px;
+  background: #f3f8f5;
+}
+
+.offer-top,
+.offer-actions > span {
+  color: #2e745f;
+}
+
+.offer-card > strong {
+  color: #173a3b;
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+}
+
+.margin-chip {
+  color: #276e5a;
+  background: #deeee6;
+}
+
+.violation {
+  border-color: #efd8d5;
+  border-radius: 6px;
+  background: #fbf3f2;
+}
+
+.ai-guidance[data-source="offline"] {
+  border-color: #d4e7dd;
+  background: #f4f8f5;
+}
+
+.ai-guidance[data-source="offline"] > b {
+  color: #26745f;
+}
+
+.offline-playbook-note {
+  border-color: #e2e9e7;
+}
+
+/* Dialogs and status messages */
+.modal-backdrop {
+  background: #0d2234a8;
+  backdrop-filter: blur(2px);
+}
+
+.new-deal-modal {
+  width: min(540px, calc(100vw - 28px));
+  max-height: min(88vh, 850px);
+  overflow-y: auto;
+  padding: 22px;
+  border: 1px solid #dce5eb;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 22px 70px #0a1d2b35;
+}
+
+.modal-head {
+  border-color: #e2e9ed;
+}
+
+.auth-eyebrow {
+  color: var(--brand-dark);
+}
+
+.modal-head h2 {
+  color: var(--ink);
+}
+
+.modal-head p {
+  color: #6d8090;
+}
+
+.modal-actions {
+  gap: 8px;
+}
+
+.notice-popover {
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 8px 24px #10283d1c;
+}
+
+.app-message,
+.auth-error {
+  border-radius: 6px;
+}
+
+.loading-workspace {
+  color: #627788;
+}
+
+.spin {
+  color: var(--brand);
+  animation-duration: 2.2s;
+}
+
+.ai-loading-card {
+  border-color: #dce7e5;
+  border-radius: 7px;
+  background: #f5f8f7;
+  box-shadow: none;
+}
+
+.ai-loading-icon {
+  color: var(--brand-dark);
+  background: #e4efed;
+}
+
+.ai-loading-heading b {
+  color: var(--ink);
+}
+
+.ai-loading-heading span {
+  color: var(--brand-dark);
+}
+
+.ai-loading-track {
+  background: #e0e9e7;
+}
+
+.ai-loading-track span {
+  background: var(--brand);
+  animation-duration: 2.2s;
+}
+
+/* Restrained interaction motion and accessible reduced-motion support */
+@media (prefers-reduced-motion: no-preference) {
+  .metric-card,
+  .panel,
+  .account-card,
+  .account-funnel-account-list button {
+    transition: border-color .14s ease, box-shadow .14s ease;
+  }
+
+  .metric-card:hover,
+  .account-card:hover {
+    border-color: #c5d5dc;
+    box-shadow: 0 3px 10px #142b3b0c;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+@media (max-width: 1050px) {
+  .topbar {
+    padding: 0 22px;
+  }
+
+  .content {
+    padding: 25px 22px 30px;
+  }
+}
+
+@media (max-width: 760px) {
+  .sidebar {
+    width: 252px;
+  }
+
+  .main-area,
+  .shell.sidebar-collapsed .main-area {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .shell.sidebar-collapsed .sidebar {
+    width: 68px;
+  }
+
+  .topbar {
+    height: 56px;
+    padding: 0 14px;
+  }
+
+  .top-actions {
+    gap: 9px;
+  }
+
+  .search-box {
+    width: min(240px, 48vw);
+  }
+
+  .content {
+    padding: 22px 15px 26px;
+  }
+
+  .page-heading {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+  }
+
+  .heading-actions {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+
+  .metric-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .crumb {
+    display: none;
+  }
+
+  .search-box {
+    width: min(210px, 54vw);
+  }
+
+  .search-box kbd,
+  .top-avatar {
+    display: none;
+  }
+
+  .metric-card {
+    min-height: 112px;
+    padding: 12px;
+  }
+
+  .metric-value {
+    font-size: 19px;
+  }
+
+  .overview-grid,
+  .negotiation-grid,
+  .planner-grid,
+  .account-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .panel,
+  .deals-panel,
+  .account-directory,
+  .account-funnel-page,
+  .account-funnel-all {
+    padding: 14px;
+  }
+}
